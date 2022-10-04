@@ -1,89 +1,89 @@
 body {
     background-color: lightblue;
-    font-family: 'Inter Tight', sans-serif; /* här sätter jag inställningarna för allt som ska va i bodyn, den ska inte gå att scrolla till höger/vänster, font och bakgrunds valdes här också. */
+    font-family: 'Inter Tight', sans-serif; 
     overflow-x: hidden;   
 }
 
 h1{
     text-align: start;
-    position: relative; /* Här är mina inställningarna för h1 då jag ville ha den på en specifik plats var jag tvungen att välja plats på texten och gjorde indrag*/
+    position: relative; 
     left: 100px; 
 }
 
 img{
-    max-width: 100%; /* Detta är mina inställningar för images som läggs in i dokumentet*/
+    max-width: 100%; 
     display: block;
 }
 
-.bild1{ /* Detta är inställningarna för just den bilden jag använde på sidan*/
+.bild1{ 
     width: 100%;
     height: 100%;
-    aspect-ratio: 1 / 1; /* Detta sätter aspect ratio på bilden och låter den behålla sin "form"*/
-    object-fit: cover; /* Detta kommando gör så att bilden täcker den div den blir placerad it*/
-    object-position: bottom;  /* Detta väljer vilken bit av bilden som ska visas, i detta fall så har jag valt att den nedre biten av bilden ska synas i diven*/
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    object-position: bottom;  
 }
 
-input[type=text] {  /* Detta är mina inställningar för input rutan med text, dvs användarnamn*/
+input[type=text] {  
   border: none;
   border-bottom: 2px solid black;
 }
 
-input[type=password] { /* Detta är mina inställningar för input rutan med password, dvs lösenord*/
+input[type=password] { 
   border: none;
   border-bottom: 2px solid black;
 }
 
-.container{ /* Här sätts de inställningar för hela mitt css grid system. I container så kommer alla klasser bli placerade och vissa av de har egna inställningar. */
-  display:grid; /* hur sidan kommer bli uppbyggd, i detta fall kommer elementet bli ett grid system vilket delar upp sidan i olika områden där man kan bestämma storlek på alla områden*/
-  height: 100vh; /* 100vh betyder att innehållet är 100% av viewport heighten */
+.container{ 
+  display:grid; 
+  height: 100vh; 
   width: 100%;
-  grid-template-columns: 1fr 1fr ; /* denna inställning bestämmer hur många kolumner jag vill ha i mitt gridsystem */
-  grid-template-rows: 0.5fr 1.5fr 1.5fr auto; /* denna inställning bestämmer hur många rader jag vill ha mitt gridsystem */
-  grid-template-areas: /* Detta är för att enkelt rita upp hur jag vill att mitt gridsystem ska se ut. Man skriver bara ut namnen på de ID som finns i gridsystemet */
+  grid-template-columns: 1fr 1fr ; 
+  grid-template-rows: 0.5fr 1.5fr 1.5fr auto; 
+  grid-template-areas: 
   "header header "
   "imgcard imgcard "
   "content1 box"
   "footer footer";
-  font-family: 'Inter Tight', sans-serif; /* Detta sätter fonten i hela containern */
+  font-family: 'Inter Tight', sans-serif; 
 }
 
 #header{
-  grid-area: header; /* Detta är för att döpa detta ID till header som jag använder för att bygga upp mitt gridsystem på rad 42-46 */
+  grid-area: header; 
 }
 
 #content1{
-  grid-area: content1; /* namnet på detta ID */
-  height: 300px;  /* höjden på denna div */
+  grid-area: content1; 
+  height: 300px;  
   max-width:100%;
-  overflow: auto; /* Detta kommer att göra när texten inte får plats på skärmen så kommer en scroll komma upp så man fortfarande kan läsa all text som är i denna ruta */
-  text-overflow:ellipsis ; /* Detta gör att texten blir en ellipsis det vill säga att om det inte får plats så minimeras den men denna samarbetar med raden ovanför  */
-  text-align: center; /* centrerar texten i rutan */
+  overflow: auto; 
+  text-overflow:ellipsis ; 
+  text-align: center; 
 }
 
 #box{
   display:grid;
-  grid-area: box; /* Detta är namnet på detta ID */
-  width: auto;  /* sätter höjd och bredd till automatiskt*/
+  grid-area: box; 
+  width: auto;  
   height: auto;
-  justify-content: center; /* centrerar innehållet */
-  align-content: center;  /* centrerar innehållet */
+  justify-content: center; 
+  align-content: center;  
 }
 
 #imgcard{
-  grid-area: imgcard; /* namn på id*/
-  width:100%; /* bredd */
-  height:400px; /* höjd */
+  grid-area: imgcard; 
+  width:100%; 
+  height:400px; 
 }
 
 footer{
-  grid-area: footer; /* namn på ID */
-  height: 150px; /* höjd */
-  justify-content: center; /* centrerar innehållet */
-  text-align: center; /* centrerar texten */
-  padding: 40px; /* till sätter padding i detta ID */
+  grid-area: footer; 
+  height: 150px; 
+  justify-content: center; 
+  text-align: center; 
+  padding: 40px; 
 }
 
-@media (min-width:40em){ /* Detta gör så att sidan blir responsiv, och här skriver jag bara ut namn på de ID som finns för att hur det ska se ut på skärmar med liten skärm */
+@media (min-width:40em){ 
   .container{
     grid-template-areas: 
     "header"
